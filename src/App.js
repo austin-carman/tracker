@@ -1,17 +1,16 @@
 import "./App.css";
-import { jobs } from "./data/data";
-import Interested from "./components/status-categories/Interested";
+import { useState } from "react";
+import { jobsData } from "./data/data";
+import Category from "./components/status-categories/Category";
 
 function App() {
-  const interestedJobs = jobs.filter((job) => {
-    return job.status === "Interested";
-  });
+  // eslint-disable-next-line no-unused-vars
+  const [jobs, setJobs] = useState(jobsData);
 
   return (
     <div className="App">
       <div className="container">
-        <Interested jobs={interestedJobs} />
-        {/* <div className="column column-1">Interested</div> */}
+        <Category jobs={jobs.interested} title="Interested" />
         <div className="column column-2">Applied</div>
         <div className="column column-3">Reached Out</div>
         <div className="column column-4">Interview</div>

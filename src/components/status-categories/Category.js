@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
-const Interested = ({ jobs }) => {
+const Category = ({ jobs, title }) => {
   return (
     <div>
-      <div className="column column-1">Interested</div>
+      <div className="column column-1">{title}</div>
       {jobs.map((job) => {
         return (
           <div key={job.jobId}>
             <div>{job.title}</div>
+            <div>{job.location}</div>
+            <div>Added: {job.lastStatusChange}</div>
           </div>
         );
       })}
@@ -14,4 +16,4 @@ const Interested = ({ jobs }) => {
   );
 };
 
-export default Interested;
+export default Category;
