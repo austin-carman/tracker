@@ -5,3 +5,24 @@
 .column {
   padding: 10px;
 }
+.job-card {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 1%;
+}
+.job-card h4 {
+  margin: 2%;
+  
+}
+.job-card .location {
+  margin: 2%;
+}
+.job-card .date {
+  display: block;
+  font-size: smaller;
+  font-style: italic;
+  text-align: right;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}

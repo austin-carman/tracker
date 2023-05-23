@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 const Category = ({ jobs, title }) => {
   return (
-    <div>
-      <div className="column column-1">{title}</div>
+    <div className="column column-1">
+      <h3>{title}</h3>
       {jobs.map((job) => {
         return (
-          <div key={job.jobId}>
-            <div>{job.title}</div>
-            <div>{job.location}</div>
-            <div>Added: {job.lastStatusChange}</div>
+          <div key={job.jobId} className="job-card">
+            <h4>{job.title}</h4>
+            <span className="location">{job.location}</span>
+            <span className="date">{job.lastStatusChange}</span>
           </div>
         );
       })}
