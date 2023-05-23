@@ -11,11 +11,11 @@ function App() {
     <div className="App">
       <div className="container">
         <Category jobs={jobs.interested} title="Interested" />
-        <div className="column column-2">Applied</div>
-        <div className="column column-3">Reached Out</div>
-        <div className="column column-4">Interview</div>
-        <div className="column column-5">Offer</div>
-        <div className="column column-6">Not Moving Forward</div>
+        <Category jobs={jobs.applied} title="Applied" />
+        <Category jobs={jobs.reachedOut} title="Reached Out" />
+        <Category jobs={jobs.interview} title="Interview" />
+        <Category jobs={jobs.offer} title="Offer" />
+        <Category jobs={jobs.notMovingForward} title="Not Moving Forward" />
       </div>
     </div>
   );
