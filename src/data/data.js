@@ -7,10 +7,11 @@ export const jobsData = {
       location: "remote, US",
       postUrl: "https://loan-street.com/careers/?gh_jid=4000262005",
       status: "Interested",
-      jobDescription:
+      description:
         "Company Overview LoanStreet is the first fully integrated online marketplace that streamlines the process of sharing, managing, and scaling loan trading for credit unions, banks and direct lenders. Our mission is to provide the most efficient, transparent and robust tools for financial institutions of all sizes to manage their balance sheets, connect with partners and effectively share risk.",
       notes: "These are my notes",
-      lastStatusChange: "05/22/2023",
+      dateAdded: "02/05/2023",
+      dateOfLastStatusUpdate: "05/22/2023",
     },
     {
       jobId: 3,
@@ -19,10 +20,11 @@ export const jobsData = {
       location: "remote, US",
       postUrl: "https://loan-street.com/careers/?gh_jid=4000262005",
       status: "Interested",
-      jobDescription:
+      description:
         "Company Overview LoanStreet is the first fully integrated online marketplace that streamlines the process of sharing, managing, and scaling loan trading for credit unions, banks and direct lenders. Our mission is to provide the most efficient, transparent and robust tools for financial institutions of all sizes to manage their balance sheets, connect with partners and effectively share risk.",
       notes: "These are my notes",
-      lastStatusChange: "05/22/2023",
+      dateAdded: "02/05/2023",
+      dateOfLastStatusUpdate: "05/22/2023",
     },
   ],
   applied: [
@@ -33,10 +35,11 @@ export const jobsData = {
       location: "remote, US",
       postUrl: "https://loan-street.com/careers/?gh_jid=4000262005",
       status: "Applied",
-      jobDescription:
+      description:
         "Company Overview LoanStreet is the first fully integrated online marketplace that streamlines the process of sharing, managing, and scaling loan trading for credit unions, banks and direct lenders. Our mission is to provide the most efficient, transparent and robust tools for financial institutions of all sizes to manage their balance sheets, connect with partners and effectively share risk.",
       notes: "These are my notes",
-      lastStatusChange: "05/22/2023",
+      dateAdded: "02/05/2023",
+      dateOfLastStatusUpdate: "05/22/2023",
     },
   ],
   reachedOut: [],
@@ -48,10 +51,11 @@ export const jobsData = {
       location: "remote, US",
       postUrl: "https://loan-street.com/careers/?gh_jid=4000262005",
       status: "Interview",
-      jobDescription:
+      description:
         "Company Overview LoanStreet is the first fully integrated online marketplace that streamlines the process of sharing, managing, and scaling loan trading for credit unions, banks and direct lenders. Our mission is to provide the most efficient, transparent and robust tools for financial institutions of all sizes to manage their balance sheets, connect with partners and effectively share risk.",
       notes: "These are my notes",
-      lastStatusChange: "05/22/2023",
+      dateAdded: "02/05/2023",
+      dateOfLastStatusUpdate: "05/22/2023",
     },
   ],
   offer: [],
@@ -66,10 +70,11 @@ export const jobsData = {
 //     location: "remote, US",
 //     postUrl: "https://loan-street.com/careers/?gh_jid=4000262005",
 //     status: "Interested",
-//     jobDescription:
+//     description:
 //       "Company Overview LoanStreet is the first fully integrated online marketplace that streamlines the process of sharing, managing, and scaling loan trading for credit unions, banks and direct lenders. Our mission is to provide the most efficient, transparent and robust tools for financial institutions of all sizes to manage their balance sheets, connect with partners and effectively share risk.",
 //     notes: "These are my notes",
-//     lastStatusChange: "05/22/2023",
+// dateAdded: "02/05/202
+// dateOfLastStatusUpdate: "05/22/2023",,
 //   },
 //   {
 //     jobId: 2,
@@ -78,9 +83,10 @@ export const jobsData = {
 //     location: "remote, US",
 //     postUrl: "https://loan-street.com/careers/?gh_jid=4000262005",
 //     status: "Applied",
-//     jobDescription:
+//     description:
 //       "Company Overview LoanStreet is the first fully integrated online marketplace that streamlines the process of sharing, managing, and scaling loan trading for credit unions, banks and direct lenders. Our mission is to provide the most efficient, transparent and robust tools for financial institutions of all sizes to manage their balance sheets, connect with partners and effectively share risk.",
 //     notes: "These are my notes",
-//     lastStatusChange: "05/22/2023",
+// dateAdded: "02/05/202
+// dateOfLastStatusUpdate: "05/22/2023",,
 //   },
 // ];
