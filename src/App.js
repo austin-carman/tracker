@@ -1,22 +1,50 @@
 import "./App.css";
 import { useState } from "react";
 import { jobsData } from "./data/data";
-import Category from "./components/status-categories/Category";
+import Category from "./components/status/Category";
+import Details from "./components/details/Details";
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [jobs, setJobs] = useState(jobsData);
+  const [jobDetails, setJobDetails] = useState(null);
 
   return (
     <div className="App">
       <div className="container">
-        <Category jobs={jobs.interested} title="Interested" />
-        <Category jobs={jobs.applied} title="Applied" />
-        <Category jobs={jobs.reachedOut} title="Reached Out" />
-        <Category jobs={jobs.interview} title="Interview" />
-        <Category jobs={jobs.offer} title="Offer" />
-        <Category jobs={jobs.notMovingForward} title="Not Moving Forward" />
+        <Category
+          jobs={jobsData.interested}
+          title="Interested"
+          setJobDetails={setJobDetails}
+        />
+        <Category
+          jobs={jobsData.applied}
+          title="Applied"
+          setJobDetails={setJobDetails}
+        />
+        <Category
+          jobs={jobsData.reachedOut}
+          title="Reached Out"
+          setJobDetails={setJobDetails}
+        />
+        <Category
+          jobs={jobsData.interview}
+          title="Interview"
+          setJobDetails={setJobDetails}
+        />
+        <Category
+          jobs={jobsData.offer}
+          title="Offer"
+          setJobDetails={setJobDetails}
+        />
+        <Category
+          jobs={jobsData.notMovingForward}
+          title="Not Moving Forward"
+          setJobDetails={setJobDetails}
+        />
       </div>
+      {/* <Details jobDetails={jobDetails} setJobDetails={setJobDetails} /> */}
+      {jobDetails && (
+        <Details jobDetails={jobDetails} setJobDetails={setJobDetails} />
+      )}
     </div>
   );
 }
