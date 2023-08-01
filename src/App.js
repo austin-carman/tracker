@@ -21,7 +21,7 @@ function App() {
     };
 
     jobList.map((job) => {
-      switch (job.category) {
+      switch (job.status) {
         case "interested":
           organizedJobs.interested.push(job);
           break;
@@ -41,7 +41,7 @@ function App() {
           organizedJobs.notMovingForward.push(job);
           break;
         default:
-          console.log("job category error: ", job);
+          console.log("job status error: ", job);
           setError(errorMessage);
       }
     });

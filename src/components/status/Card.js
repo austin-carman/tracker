@@ -24,7 +24,8 @@ const Card = ({ job, setJobDetails }) => {
     >
       <h4>{job.title}</h4>
       <span className="location">{job.location}</span>
-      <span className="date">{job.lastStatusChange}</span>
+      <span className="company">{job.company}</span>
+      <span className="date">{job.dateOfLastStatusUpdate}</span>
     </div>
   );
 };
