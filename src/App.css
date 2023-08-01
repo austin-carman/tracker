@@ -85,11 +85,11 @@ h5 {
 h6 {
   font-size: 1.6rem;
 }
-a {
+/* a {
   text-decoration: none;
   letter-spacing: 0.1em;
   color: black;
-}
+} */
 
 /*  */
 .container {

@@ -1,4 +1,4 @@
-export const jobsData = [
+export let jobsData = [
   {
     jobId: 1,
     userId: 1,
