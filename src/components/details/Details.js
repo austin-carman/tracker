@@ -24,6 +24,9 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
     // mock API ....
     const updatedJobs = jobs.map((j) => {
       if (j.jobId === job.jobId) {
+        const date = new Date();
+        const localDateString = date.toLocaleDateString();
+        job.dateOfLastStatusUpdate = localDateString;
         return job;
       }
       return j;
