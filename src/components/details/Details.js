@@ -21,6 +21,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
   };
 
   const handleSaveDetails = () => {
+    // mock API ....
     const updatedJobs = jobs.map((j) => {
       if (j.jobId === job.jobId) {
         return job;
@@ -31,19 +32,14 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
     handleCloseDetails();
   };
 
-  console.log("jobs: ", jobs);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setJob({ ...job, [name]: value });
   };
 
   const handleStartEdit = (label) => {
-    console.log("edit: ", label);
     setIsEditing({ ...isEditing, [label]: true });
   };
-
-  console.log(isEditing);
 
   return (
     <div className="details-container">
@@ -60,7 +56,9 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         <h2>{job.company}</h2>
       </div>
       <h3>{job.location}</h3>
-      <h3>{job.postUrl}</h3>
+      <a href={job.postUrl}>
+        <h3>Job posting</h3>
+      </a>
       {/* need to add value from state = status */}
       <select>
         <option>Interested</option>
