@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-/* eslint-disable react/prop-types */
 const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
   const [job, setJob] = useState(jobDetails);
   const [isEditing, setIsEditing] = useState({
@@ -21,15 +21,14 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
   };
 
   const handleSaveDetails = () => {
-    // mock API ....
-    const updatedJobs = jobs.map((j) => {
-      if (j.jobId === job.jobId) {
+    const updatedJobs = jobs.map((currentJob) => {
+      if (currentJob.jobId === job.jobId) {
         const date = new Date();
         const localDateString = date.toLocaleDateString();
         job.dateOfLastStatusUpdate = localDateString;
         return job;
       }
-      return j;
+      return currentJob;
     });
     setJobs(updatedJobs);
     handleCloseDetails();

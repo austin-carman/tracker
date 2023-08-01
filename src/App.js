@@ -50,11 +50,13 @@ function App() {
     return organizedJobs;
   };
 
-  // Example of using fetch() method for API request but
-  // will be using dummy data from data.js file.
+  // Demonstrating example of using fetch() method for API request
+  // However, because no database exists I will ultimately be using
+  // dummy data from data.js file.
   const fetchJobs = async () => {
-    // Mock api endpoint -> doesn't really return any data
-    // just used to demonstrate API request if backend/database existed
+    // Mock api endpoint -> doesn't really return any data in this use case
+    // Mock API -> https://mockapi.io/
+    // mock endpoint used to demonstrate API request
     const url = "https://64af0767c85640541d4e0eb8.mockapi.io/api/v1/messages";
     try {
       const response = await fetch(url);
@@ -63,8 +65,8 @@ function App() {
       } else {
         setError(null);
         // const data = await response.json();
-        // would normally use variable 'data' from line above but because
-        // no data actually exists, I will be using jobsData (dummy data)
+        // would normally use variable 'data' from line above to set state but
+        // because no data actually exists, I will be using jobsData (dummy data)
         // from data.js file.
         setJobs(jobsData);
       }
