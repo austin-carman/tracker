@@ -116,36 +116,61 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
       </select>
       <span>{job.dateOfLastStatusUpdate}</span>
 
-      <div
-        id="editable-description-container"
-        className="editable-details-container"
-      >
-        <div id="description-edit-container">
-          <h3>Description</h3>
-          <button
-            className="edit-button"
-            onClick={() => handleStartEdit("description")}
-          >
-            Edit
-          </button>
-        </div>
+      <div id="editable-container" className="editable-details-container">
         {isEditing.description ? (
-          <input
-            name="description"
-            value={job.description}
-            onChange={handleChange}
-          />
+          <>
+            <h3>Description</h3>
+            <input
+              name="description"
+              value={job.description}
+              onChange={handleChange}
+            />
+          </>
         ) : (
           <>
+            <div id="label-edit-container">
+              <h3>Description</h3>
+              <button
+                className="edit-button"
+                onClick={() => handleStartEdit("description")}
+              >
+                Edit
+              </button>
+            </div>
             <p>{job.description}</p>
           </>
         )}
       </div>
-
-      {/* <h3>Description</h3>
-      <p>{job.description}</p> */}
-      <h3>Notes</h3>
-      <p>{job.notes}</p>
+      <div id="editable-container" className="editable-details-container">
+        {/* <div id="label-edit-container">
+          <h3>Notes</h3>
+          <button
+            className="edit-button"
+            onClick={() => handleStartEdit("notes")}
+          >
+            Edit
+          </button>
+        </div> */}
+        {isEditing.notes ? (
+          <>
+            <h3>Notes</h3>
+            <input name="notes" value={job.notes} onChange={handleChange} />
+          </>
+        ) : (
+          <>
+            <div id="label-edit-container">
+              <h3>Notes</h3>
+              <button
+                className="edit-button"
+                onClick={() => handleStartEdit("notes")}
+              >
+                Edit
+              </button>
+            </div>
+            <p>{job.notes}</p>
+          </>
+        )}
+      </div>
       <p>Date Added: {job.dateAdded}</p>
       <button onClick={handleCloseDetails}>Cancel</button>
       <button onClick={handleSaveDetails}>Save</button>
