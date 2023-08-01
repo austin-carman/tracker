@@ -58,10 +58,25 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
-      <div>
+      <div className="editable-details-container">
+        {isEditing.company ? (
+          <input name="company" value={job.company} onChange={handleChange} />
+        ) : (
+          <>
+            <h2>{job.company}</h2>
+            <button
+              className="edit-button"
+              onClick={() => handleStartEdit("company")}
+            >
+              Edit
+            </button>
+          </>
+        )}
+      </div>
+      {/* <div>
         <button onClick={() => handleStartEdit("company")}>Edit</button>
         <h2>{job.company}</h2>
-      </div>
+      </div> */}
       <h3>{job.location}</h3>
       <a href={job.postUrl}>
         <h3>View job post</h3>
