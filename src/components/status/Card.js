@@ -5,7 +5,7 @@ const Card = ({ job, setJobDetails }) => {
   };
 
   const drag = (e) => {
-    e.dataTransfer.setData("text", e.target.id);
+    e.dataTransfer.setData("jobId", e.target.id);
   };
 
   return (
@@ -23,8 +23,9 @@ const Card = ({ job, setJobDetails }) => {
       onDragStart={drag}
     >
       <h4>{job.title}</h4>
-      <span className="location">{job.location}</span>
-      <span className="date">{job.lastStatusChange}</span>
+      <h5 className="company">{job.company}</h5>
+      <h6 className="location">{job.location}</h6>
+      <h6 className="date">{job.dateOfLastStatusUpdate}</h6>
     </div>
   );
 };
