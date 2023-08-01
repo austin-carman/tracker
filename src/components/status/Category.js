@@ -14,7 +14,7 @@ const Category = ({ jobs, title, setJobDetails }) => {
 
   return (
     <div className="column" onDrop={drop} onDragOver={allowDrop}>
-      <h3>{title}</h3>
+      <h2 className="category-label">{title}</h2>
       <div>
         {jobs.map((job) => {
           return (

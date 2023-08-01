@@ -23,9 +23,9 @@ const Card = ({ job, setJobDetails }) => {
       onDragStart={drag}
     >
       <h4>{job.title}</h4>
-      <span className="location">{job.location}</span>
-      <span className="company">{job.company}</span>
-      <span className="date">{job.dateOfLastStatusUpdate}</span>
+      <h5 className="company">{job.company}</h5>
+      <h6 className="location">{job.location}</h6>
+      <h6 className="date">{job.dateOfLastStatusUpdate}</h6>
     </div>
   );
 };
