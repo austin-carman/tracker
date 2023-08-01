@@ -2,29 +2,29 @@
 import Card from "./Card";
 
 const Category = ({ jobs, title, setJobDetails }) => {
-  function allowDrop(ev) {
-    ev.preventDefault();
-  }
+  const allowDrop = (e) => {
+    e.preventDefault();
+  };
 
-  function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    console.log("data: ", data, "id", data.id);
-    ev.target.appendChild(document.getElementById(data));
-  }
+  const drop = (e) => {
+    e.preventDefault();
+    var data = e.dataTransfer.getData("text");
+    e.currentTarget.appendChild(document.getElementById(data));
+    // e.target.appendChild(document.getElementById(data));
+  };
 
   return (
     <div
       className="column column-1"
       onDrop={drop}
       onDragOver={allowDrop}
-      style={{
-        backgroundColor: "red",
+      style={{ border: "1px solid red", height: "200%" }}
+    >
+      {/* style={{
         width: "90%",
         height: "200%",
         border: "1px solid black",
-      }}
-    >
+      }} */}
       <h3>{title}</h3>
       <div>
         {jobs.map((job) => {

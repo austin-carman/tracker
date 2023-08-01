@@ -4,9 +4,9 @@ const Card = ({ job, setJobDetails }) => {
     setJobDetails(job);
   };
 
-  function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
+  const drag = (e) => {
+    e.dataTransfer.setData("text", e.target.id);
+  };
 
   return (
     <div
@@ -21,6 +21,7 @@ const Card = ({ job, setJobDetails }) => {
       }}
       draggable={true}
       onDragStart={drag}
+      onDrop={null}
     >
       <h4>{job.title}</h4>
       <span className="location">{job.location}</span>
