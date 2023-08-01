@@ -18,7 +18,6 @@ function App() {
             title="Interested"
             setJobDetails={setJobDetails}
           />
-
           <Category
             jobs={jobsData.applied}
             title="Applied"
@@ -46,8 +45,6 @@ function App() {
           />
         </DndProvider>
       </div>
-
-      {/* <Details jobDetails={jobDetails} setJobDetails={setJobDetails} /> */}
       {jobDetails && (
         <Details jobDetails={jobDetails} setJobDetails={setJobDetails} />
       )}
