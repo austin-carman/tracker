@@ -138,3 +138,9 @@ h6 {
 .editable-details-container:hover .edit-button {
   display: block;
 }
+#editable-description-container {
+  display: block;
+}
+#description-edit-container {
+  display: flex;
+}

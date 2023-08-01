@@ -73,14 +73,38 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
-      {/* <div>
-        <button onClick={() => handleStartEdit("company")}>Edit</button>
-        <h2>{job.company}</h2>
-      </div> */}
-      <h3>{job.location}</h3>
-      <a href={job.postUrl}>
-        <h3>View job post</h3>
-      </a>
+      <div className="editable-details-container">
+        {isEditing.location ? (
+          <input name="location" value={job.location} onChange={handleChange} />
+        ) : (
+          <>
+            <h2>{job.location}</h2>
+            <button
+              className="edit-button"
+              onClick={() => handleStartEdit("location")}
+            >
+              Edit
+            </button>
+          </>
+        )}
+      </div>
+      <div className="editable-details-container">
+        {isEditing.postUrl ? (
+          <input name="postUrl" value={job.postUrl} onChange={handleChange} />
+        ) : (
+          <>
+            <a href={job.postUrl}>
+              <h3>View job post</h3>
+            </a>
+            <button
+              className="edit-button"
+              onClick={() => handleStartEdit("postUrl")}
+            >
+              Edit
+            </button>
+          </>
+        )}
+      </div>
       {/* need to add value from state = status */}
       <select>
         <option>Interested</option>
@@ -91,8 +115,35 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         <option>Not Moving Forward</option>
       </select>
       <span>{job.dateOfLastStatusUpdate}</span>
-      <h3>Description</h3>
-      <p>{job.description}</p>
+
+      <div
+        id="editable-description-container"
+        className="editable-details-container"
+      >
+        <div id="description-edit-container">
+          <h3>Description</h3>
+          <button
+            className="edit-button"
+            onClick={() => handleStartEdit("description")}
+          >
+            Edit
+          </button>
+        </div>
+        {isEditing.description ? (
+          <input
+            name="description"
+            value={job.description}
+            onChange={handleChange}
+          />
+        ) : (
+          <>
+            <p>{job.description}</p>
+          </>
+        )}
+      </div>
+
+      {/* <h3>Description</h3>
+      <p>{job.description}</p> */}
       <h3>Notes</h3>
       <p>{job.notes}</p>
       <p>Date Added: {job.dateAdded}</p>
