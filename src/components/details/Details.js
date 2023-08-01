@@ -43,12 +43,19 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
 
   return (
     <div className="details-container">
-      <div>
-        <button onClick={() => handleStartEdit("title")}>Edit</button>
+      <div className="editable-details-container">
         {isEditing.title ? (
           <input name="title" value={job.title} onChange={handleChange} />
         ) : (
-          <h2>{job.title}</h2>
+          <>
+            <h2>{job.title}</h2>
+            <button
+              className="edit-button"
+              onClick={() => handleStartEdit("title")}
+            >
+              Edit
+            </button>
+          </>
         )}
       </div>
       <div>
@@ -57,7 +64,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
       </div>
       <h3>{job.location}</h3>
       <a href={job.postUrl}>
-        <h3>Job posting</h3>
+        <h3>View job post</h3>
       </a>
       {/* need to add value from state = status */}
       <select>

@@ -122,5 +122,19 @@ h6 {
   background-color: white;
   padding: 2%;
   border-radius: 10px;
-  /* backdrop-filter: blur(20px); */
+}
+.editable-details-container {
+  display: flex;
+}
+.edit-button {
+  display: none;
+}
+.edit-button:hover {
+  cursor: pointer;
+}
+.editable-details-container:hover {
+  cursor: pointer;
+}
+.editable-details-container:hover .edit-button {
+  display: block;
 }
