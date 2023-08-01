@@ -27,8 +27,10 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log('name: ', name, 'value: ', value);
+    setJob({ ...job, [name]: value });
   };
+
+  console.log("job: ", job);
 
   const handleStartEdit = (label) => {
     console.log("edit: ", label);
@@ -42,7 +44,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
       <div>
         <button onClick={() => handleStartEdit("title")}>Edit</button>
         {isEditing.title ? (
-          <input name="title" value={job.title} />
+          <input name="title" value={job.title} onChange={handleChange} />
         ) : (
           <h2>{job.title}</h2>
         )}
