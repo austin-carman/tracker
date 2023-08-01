@@ -1,26 +1,27 @@
 /* eslint-disable react/prop-types */
+import Card from "./Card";
 
 const Category = ({ jobs, title, setJobDetails }) => {
-  const handleClick = (job) => {
-    setJobDetails(job);
+  const allowDrop = (e) => {
+    e.preventDefault();
+  };
+
+  const drop = (e) => {
+    e.preventDefault();
+    var data = e.dataTransfer.getData("text");
+    e.currentTarget.appendChild(document.getElementById(data));
   };
 
   return (
-    <div className="column column-1">
+    <div className="column" onDrop={drop} onDragOver={allowDrop}>
       <h3>{title}</h3>
-      {jobs.map((job) => {
-        return (
-          <div
-            key={job.jobId}
-            className="job-card"
-            onClick={() => handleClick(job)}
-          >
-            <h4>{job.title}</h4>
-            <span className="location">{job.location}</span>
-            <span className="date">{job.lastStatusChange}</span>
-          </div>
-        );
-      })}
+      <div>
+        {jobs.map((job) => {
+          return (
+            <Card key={job.jobId} job={job} setJobDetails={setJobDetails} />
+          );
+        })}
+      </div>
     </div>
   );
 };
