@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 
 /* eslint-disable react/prop-types */
@@ -22,15 +21,22 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
   };
 
   const handleSaveDetails = () => {
-    console.log("save details");
+    const updatedJobs = jobs.map((j) => {
+      if (j.jobId === job.jobId) {
+        return job;
+      }
+      return j;
+    });
+    setJobs(updatedJobs);
+    handleCloseDetails();
   };
+
+  console.log("jobs: ", jobs);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setJob({ ...job, [name]: value });
   };
-
-  console.log("job: ", job);
 
   const handleStartEdit = (label) => {
     console.log("edit: ", label);
