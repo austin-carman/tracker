@@ -141,3 +141,10 @@ h6 {
 #label-edit-container {
   display: flex;
 }
+.details-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+.date-added {
+  font-style: italic;
+}

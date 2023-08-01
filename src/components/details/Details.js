@@ -43,9 +43,13 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
 
   return (
     <div className="details-container">
+      {/* Job Title */}
       <div className="editable-details-container">
         {isEditing.title ? (
-          <input name="title" value={job.title} onChange={handleChange} />
+          <div>
+            <h6>Title:&nbsp;</h6>
+            <input name="title" value={job.title} onChange={handleChange} />
+          </div>
         ) : (
           <>
             <h2>{job.title}</h2>
@@ -58,9 +62,13 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
+      {/* Company name */}
       <div className="editable-details-container">
         {isEditing.company ? (
-          <input name="company" value={job.company} onChange={handleChange} />
+          <div>
+            <h6>Company:&nbsp;</h6>
+            <input name="company" value={job.company} onChange={handleChange} />
+          </div>
         ) : (
           <>
             <h2>{job.company}</h2>
@@ -73,9 +81,17 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
+      {/* Location */}
       <div className="editable-details-container">
         {isEditing.location ? (
-          <input name="location" value={job.location} onChange={handleChange} />
+          <div>
+            <h6>Location:&nbsp;</h6>
+            <input
+              name="location"
+              value={job.location}
+              onChange={handleChange}
+            />
+          </div>
         ) : (
           <>
             <h2>{job.location}</h2>
@@ -88,9 +104,13 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
+      {/* Posting URL */}
       <div className="editable-details-container">
         {isEditing.postUrl ? (
-          <input name="postUrl" value={job.postUrl} onChange={handleChange} />
+          <div>
+            <h6>Posting Url:&nbsp;</h6>
+            <input name="postUrl" value={job.postUrl} onChange={handleChange} />
+          </div>
         ) : (
           <>
             <a href={job.postUrl}>
@@ -105,7 +125,9 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
+      {/* Status/Category */}
       {/* need to add value from state = status */}
+      <h2>Status</h2>
       <select>
         <option>Interested</option>
         <option>Applied</option>
@@ -114,8 +136,8 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         <option>Offer</option>
         <option>Not Moving Forward</option>
       </select>
-      <span>{job.dateOfLastStatusUpdate}</span>
-
+      <span>Last updated:&nbsp;{job.dateOfLastStatusUpdate}</span>
+      {/* Description */}
       <div id="editable-container" className="editable-details-container">
         {isEditing.description ? (
           <>
@@ -141,16 +163,8 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
+      {/* Notes */}
       <div id="editable-container" className="editable-details-container">
-        {/* <div id="label-edit-container">
-          <h3>Notes</h3>
-          <button
-            className="edit-button"
-            onClick={() => handleStartEdit("notes")}
-          >
-            Edit
-          </button>
-        </div> */}
         {isEditing.notes ? (
           <>
             <h3>Notes</h3>
@@ -171,9 +185,12 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
-      <p>Date Added: {job.dateAdded}</p>
-      <button onClick={handleCloseDetails}>Cancel</button>
-      <button onClick={handleSaveDetails}>Save</button>
+      <div className="details-buttons-container">
+        <button onClick={handleCloseDetails}>Cancel</button>
+        {/* Date Added */}
+        <span className="date-added">Date Added: {job.dateAdded}</span>
+        <button onClick={handleSaveDetails}>Save</button>
+      </div>
     </div>
   );
 };
