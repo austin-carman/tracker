@@ -48,7 +48,12 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         {isEditing.title ? (
           <div>
             <h6>Title:&nbsp;</h6>
-            <input name="title" value={job.title} onChange={handleChange} />
+            <input
+              className="h2-input"
+              name="title"
+              value={job.title}
+              onChange={handleChange}
+            />
           </div>
         ) : (
           <>
@@ -67,7 +72,12 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         {isEditing.company ? (
           <div>
             <h6>Company:&nbsp;</h6>
-            <input name="company" value={job.company} onChange={handleChange} />
+            <input
+              className="h2-input"
+              name="company"
+              value={job.company}
+              onChange={handleChange}
+            />
           </div>
         ) : (
           <>
@@ -87,6 +97,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           <div>
             <h6>Location:&nbsp;</h6>
             <input
+              className="h2-input"
               name="location"
               value={job.location}
               onChange={handleChange}
@@ -109,7 +120,12 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         {isEditing.postUrl ? (
           <div>
             <h6>Posting Url:&nbsp;</h6>
-            <input name="postUrl" value={job.postUrl} onChange={handleChange} />
+            <input
+              className="h3-input"
+              name="postUrl"
+              value={job.postUrl}
+              onChange={handleChange}
+            />
           </div>
         ) : (
           <>
@@ -128,13 +144,13 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
       {/* Status/Category */}
       {/* need to add value from state = status */}
       <h2>Status</h2>
-      <select>
-        <option>Interested</option>
-        <option>Applied</option>
-        <option>Reached Out</option>
-        <option>Interview</option>
-        <option>Offer</option>
-        <option>Not Moving Forward</option>
+      <select name="status" value={job.status} onChange={handleChange}>
+        <option value={"interested"}>Interested</option>
+        <option value={"applied"}>Applied</option>
+        <option value={"reachedOut"}>Reached Out</option>
+        <option value={"interview"}>Interview</option>
+        <option value={"offer"}>Offer</option>
+        <option value={"notMovingForward"}>Not Moving Forward</option>
       </select>
       <span>Last updated:&nbsp;{job.dateOfLastStatusUpdate}</span>
       {/* Description */}
@@ -143,6 +159,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           <>
             <h3>Description</h3>
             <input
+              className="h3-input"
               name="description"
               value={job.description}
               onChange={handleChange}
@@ -168,7 +185,12 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         {isEditing.notes ? (
           <>
             <h3>Notes</h3>
-            <input name="notes" value={job.notes} onChange={handleChange} />
+            <input
+              className="h3-input"
+              name="notes"
+              value={job.notes}
+              onChange={handleChange}
+            />
           </>
         ) : (
           <>
