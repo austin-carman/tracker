@@ -5,7 +5,7 @@ const Card = ({ job, setJobDetails }) => {
   };
 
   const drag = (e) => {
-    e.dataTransfer.setData("text", e.target.id);
+    e.dataTransfer.setData("jobId", e.target.id);
   };
 
   return (

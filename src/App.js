@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { jobsData } from "./data/data";
+import { jobsData, categoryNames, statusOptions } from "./data/data";
 import Category from "./components/status/Category";
 import Details from "./components/details/Details";
 
@@ -20,25 +20,26 @@ function App() {
       notMovingForward: [],
     };
 
+    console.log();
     jobList.map((job) => {
       switch (job.status) {
-        case "interested":
-          organizedJobs.interested.push(job);
+        case statusOptions[0]:
+          organizedJobs[statusOptions[0]].push(job);
           break;
-        case "applied":
-          organizedJobs.applied.push(job);
+        case statusOptions[1]:
+          organizedJobs[statusOptions[1]].push(job);
           break;
-        case "reachedOut":
-          organizedJobs.reachedOut.push(job);
+        case statusOptions[2]:
+          organizedJobs[statusOptions[2]].push(job);
           break;
-        case "interview":
-          organizedJobs.interview.push(job);
+        case statusOptions[3]:
+          organizedJobs[statusOptions[3]].push(job);
           break;
-        case "offer":
-          organizedJobs.offer.push(job);
+        case statusOptions[4]:
+          organizedJobs[statusOptions[4]].push(job);
           break;
-        case "notMovingForward":
-          organizedJobs.notMovingForward.push(job);
+        case statusOptions[5]:
+          organizedJobs[statusOptions[5]].push(job);
           break;
         default:
           console.log("job status error: ", job);
@@ -84,33 +85,45 @@ function App() {
     <div className="App">
       <div className="container">
         <Category
-          jobs={categorizedJobs.interested}
-          title="Interested"
+          jobs={jobs}
+          setJobs={setJobs}
+          categoryJobs={categorizedJobs.interested}
+          title={categoryNames.interested}
           setJobDetails={setJobDetails}
         />
         <Category
-          jobs={categorizedJobs.applied}
-          title="Applied"
+          jobs={jobs}
+          setJobs={setJobs}
+          categoryJobs={categorizedJobs.applied}
+          title={categoryNames.applied}
           setJobDetails={setJobDetails}
         />
         <Category
-          jobs={categorizedJobs.reachedOut}
-          title="Reached Out"
+          jobs={jobs}
+          setJobs={setJobs}
+          categoryJobs={categorizedJobs.reachedOut}
+          title={categoryNames.reachedOut}
           setJobDetails={setJobDetails}
         />
         <Category
-          jobs={categorizedJobs.interview}
-          title="Interview"
+          jobs={jobs}
+          setJobs={setJobs}
+          categoryJobs={categorizedJobs.interview}
+          title={categoryNames.interview}
           setJobDetails={setJobDetails}
         />
         <Category
-          jobs={categorizedJobs.offer}
-          title="Offer"
+          jobs={jobs}
+          setJobs={setJobs}
+          categoryJobs={categorizedJobs.offer}
+          title={categoryNames.offer}
           setJobDetails={setJobDetails}
         />
         <Category
-          jobs={categorizedJobs.notMovingForward}
-          title="Not Moving Forward"
+          jobs={jobs}
+          setJobs={setJobs}
+          categoryJobs={categorizedJobs.notMovingForward}
+          title={categoryNames.notMovingForward}
           setJobDetails={setJobDetails}
         />
       </div>

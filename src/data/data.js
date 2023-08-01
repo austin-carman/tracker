@@ -56,3 +56,21 @@ export const jobsData = [
     dateOfLastStatusUpdate: "05/22/2023",
   },
 ];
+
+export const categoryNames = {
+  interested: "Interested",
+  applied: "Applied",
+  reachedOut: "Reached Out",
+  interview: "Interview",
+  offer: "Offer",
+  notMovingForward: "Not Moving Forward",
+};
+
+export const statusOptions = [
+  "interested",
+  "applied",
+  "reachedOut",
+  "interview",
+  "offer",
+  "notMovingForward",
+];
