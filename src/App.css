@@ -4,6 +4,10 @@
 }
 .column {
   padding: 10px;
+  height: 200%;
+}
+.column h3 {
+  text-align: center;
 }
 .job-card {
   border: 1px solid black;
@@ -36,5 +40,5 @@
   background-color: white;
   padding: 2%;
   border-radius: 10px;
-  /* filter: blur(0px); */
+  /* backdrop-filter: blur(20px); */
 }

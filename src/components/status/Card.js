@@ -21,7 +21,6 @@ const Card = ({ job, setJobDetails }) => {
       }}
       draggable={true}
       onDragStart={drag}
-      onDrop={null}
     >
       <h4>{job.title}</h4>
       <span className="location">{job.location}</span>
