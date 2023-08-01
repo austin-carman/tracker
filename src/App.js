@@ -115,7 +115,12 @@ function App() {
         />
       </div>
       {jobDetails && (
-        <Details jobDetails={jobDetails} setJobDetails={setJobDetails} />
+        <Details
+          jobs={jobs}
+          setJobs={setJobs}
+          jobDetails={jobDetails}
+          setJobDetails={setJobDetails}
+        />
       )}
       {error && <div>{error}</div>}
     </div>
