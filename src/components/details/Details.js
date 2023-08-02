@@ -216,11 +216,11 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
-      <div className="details-buttons-container">
+      <div className="button-group">
         <button onClick={handleCloseDetails}>Cancel</button>
         {/* Date Added */}
         <span className="date-added">Date Added: {job.dateAdded}</span>
-        <button id="save-button" onClick={handleSaveDetails}>
+        <button className="save-button" onClick={handleSaveDetails}>
           Save
         </button>
       </div>
