@@ -23,7 +23,6 @@ function App() {
       notMovingForward: [],
     };
 
-    console.log();
     jobList.map((job) => {
       switch (job.status) {
         case statusOptions[0]:
@@ -47,6 +46,7 @@ function App() {
         default:
           console.log("job status error: ", job);
           setError(errorMessage);
+          break;
       }
     });
 
@@ -141,7 +141,13 @@ function App() {
           setJobDetails={setJobDetails}
         />
       )}
-      {isAddJobOpen && <AddJob setIsAddJobOpen={setIsAddJobOpen} />}
+      {isAddJobOpen && (
+        <AddJob
+          setIsAddJobOpen={setIsAddJobOpen}
+          jobs={jobs}
+          setJobs={setJobs}
+        />
+      )}
       {error && <div>{error}</div>}
     </div>
   );
