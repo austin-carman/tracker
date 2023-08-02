@@ -14,11 +14,6 @@ const Card = ({ job, setJobDetails }) => {
       id={job.jobId}
       className="job-card"
       onClick={() => handleClick(job)}
-      style={{
-        fontSize: 25,
-        fontWeight: "bold",
-        cursor: "move",
-      }}
       draggable={true}
       onDragStart={drag}
     >
