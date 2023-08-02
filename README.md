@@ -1,6 +1,46 @@
-# Getting Started with Create React App
+# Job Tracker (Kanban style board with drag and drop)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The motivation behind this project is 3 fold:
+1. `Practice`, practice, practice.
+2. Seek `advice` to improve my coding skills and meeting best coding practices. I want to learn from you!
+4. Learn about possible `job opportunities`. I am actively seeking job opportunities and if you are aware of any I would love to hear from you!
+
+  - Connect with and/or message me via [LinkedIn](https://www.linkedin.com/in/austin-carman/).
+  - [Github](https://github.com/austin-carman/tracker): You can submit an issue, pull request, or leave a comment in the discussion.
+  
+Feel free to checkout other repos pinned on my [Github profile](https://github.com/austin-carman/)!
+
+## Overview
+
+This project helps job seekers organize and track their progress as they go through the job hunting process. Users can add a job posting to this Kanban style board which organizes jobs into the following categories: interested, applied, reached out, interview, offer, and not moving forward. Each job "card" holds details for the job posting such as title, company, job posting url, description, and notes.
+
+Users can drag and drop job "cards" into different application status categories as well as create new jobs "cards" and edit existing job "cards". 
+
+**Note: This project is still a work in progress.**
+
+As currently constructed, this frontend project uses mockAPI endpoints for all API requests simply to demonstrate use of the `fetch()` method to retrieve and send data through API requests (for an example see the AddJob.js file). Dummy data contained in the `data.js` file is used for the job cards displayed on the board at first render.  Eventually, the mockAPI endpoints and dummy data will be replaced with real RESTAPI endpoints and data stored in and retrieved from a database.
+
+View live [site](https://job-tracker-three.vercel.app/)
+
+## TODO
+
+- Filters in the navbar that filter with job cards are listed on the board (ex: time frame)
+- Functionality to delete job cards
+- Replace mockAPI endpoints with real endpoints. Stop using dummy data and use data returned from API request to display job cards.
+
+## Running the project
+
+From the repo:
+  1. Clone this project locally
+  2. `cd` into project directory
+  2. Run `npm install` in your command line
+  3. Run `npm start` in your command line to view in browser
+
+## Dependency list
+
+- [React](https://react.dev/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
 ## Available Scripts
 
@@ -44,27 +84,3 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
