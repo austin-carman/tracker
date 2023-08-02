@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
   const [job, setJob] = useState(jobDetails);
+  // state used to determine if input should be rendered in place of text
   const [isEditing, setIsEditing] = useState({
     title: false,
     company: false,
@@ -11,17 +12,14 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
     description: false,
     notes: false,
   });
-  // const [html] = document.getElementsByTagName("html");
-
-  // html.style.filter = "blur(5px)";
 
   const handleCloseDetails = () => {
-    // html.style.filter = "blur(0px)";
     setJobDetails(null);
   };
 
   const handleSaveDetails = () => {
     const updatedJobs = jobs.map((currentJob) => {
+      // update job details for job with matching id
       if (currentJob.jobId === job.jobId) {
         const date = new Date();
         const localDateString = date.toLocaleDateString();
@@ -145,7 +143,6 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         )}
       </div>
       {/* Status/Category */}
-      {/* need to add value from state = status */}
       <div className="select-status">
         <h4>
           Status:{" "}
@@ -216,11 +213,11 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </>
         )}
       </div>
-      <div className="details-buttons-container">
+      <div className="button-group">
         <button onClick={handleCloseDetails}>Cancel</button>
         {/* Date Added */}
         <span className="date-added">Date Added: {job.dateAdded}</span>
-        <button id="save-button" onClick={handleSaveDetails}>
+        <button className="save-button" onClick={handleSaveDetails}>
           Save
         </button>
       </div>

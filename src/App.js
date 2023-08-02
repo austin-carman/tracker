@@ -1,13 +1,18 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { jobsData, categoryNames, statusOptions } from "./data/data";
-import Category from "./components/status/Category";
-import Details from "./components/details/Details";
+import Category from "./components/Category";
+import Details from "./components/Details";
+import Navbar from "./components/Navbar";
+import AddJob from "./components/AddJob";
 
 function App() {
   const [jobs, setJobs] = useState([]);
   const [jobDetails, setJobDetails] = useState(null);
   const [error, setError] = useState(null);
+  const [isAddJobOpen, setIsAddJobOpen] = useState(false);
+  // TODO: success message for adding or editing a job
+
   const errorMessage = "There was an error retrieving jobs";
 
   const categorizeJobs = (jobList) => {
@@ -20,7 +25,6 @@ function App() {
       notMovingForward: [],
     };
 
-    console.log();
     jobList.map((job) => {
       switch (job.status) {
         case statusOptions[0]:
@@ -44,6 +48,7 @@ function App() {
         default:
           console.log("job status error: ", job);
           setError(errorMessage);
+          break;
       }
     });
 
@@ -54,9 +59,8 @@ function App() {
   // However, because no database exists I will ultimately be using
   // dummy data from data.js file.
   const fetchJobs = async () => {
-    // Mock api endpoint -> doesn't really return any data in this use case
+    // Mock api endpoint -> to demonstrate API request (doesn't return usable data)
     // Mock API -> https://mockapi.io/
-    // mock endpoint used to demonstrate API request
     const url = "https://64af0767c85640541d4e0eb8.mockapi.io/api/v1/messages";
     try {
       const response = await fetch(url);
@@ -64,7 +68,8 @@ function App() {
         setError(errorMessage);
       } else {
         setError(null);
-        // const data = await response.json();
+        // eslint-disable-next-line no-unused-vars
+        const data = await response.json();
         // would normally use variable 'data' from line above to set state but
         // because no data actually exists, I will be using jobsData (dummy data)
         // from data.js file.
@@ -81,10 +86,12 @@ function App() {
     fetchJobs();
   }, []);
 
+  // Jobs in status category lists (ex: interested, applied)
   const categorizedJobs = categorizeJobs(jobs);
 
   return (
     <div className="App">
+      <Navbar setIsAddJobOpen={setIsAddJobOpen} />
       <div className="container">
         <Category
           jobs={jobs}
@@ -135,6 +142,13 @@ function App() {
           setJobs={setJobs}
           jobDetails={jobDetails}
           setJobDetails={setJobDetails}
+        />
+      )}
+      {isAddJobOpen && (
+        <AddJob
+          setIsAddJobOpen={setIsAddJobOpen}
+          jobs={jobs}
+          setJobs={setJobs}
         />
       )}
       {error && <div>{error}</div>}

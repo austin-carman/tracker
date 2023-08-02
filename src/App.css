@@ -90,9 +90,11 @@ input, textarea {
   border: 2px solid rgb(62, 59, 113);
   color: rgb(243, 241, 241);
   width: 100vw;
+  font-size: 1.6rem;
 }
 textarea {
   height: 20rem;
+  line-height: 2rem;
 }
 input:focus, textarea:focus {
   outline: none;
@@ -114,6 +116,7 @@ select {
 }
 select:focus {
   outline: none;
+  border: 1px solid rgb(243, 241, 241);
 }
 select:hover {
   cursor: pointer;
@@ -203,12 +206,12 @@ button:hover {
 .editable-details-container {
   display: flex;
   padding: 1% 2%;
-  width: 75%;
+  width: 90%;
   margin: auto;
 }
 .select-status {
   padding: 1% 2%;
-  width: 75%;
+  width: 90%;
   margin: auto;
 }
 #details-title {
@@ -237,7 +240,7 @@ button:hover {
 #label-edit-container {
   display: flex;
 }
-.details-buttons-container {
+.button-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -254,7 +257,7 @@ button:hover {
   font-size: 1.6rem;
   font-style: italic;
 }
-#save-button {
+.save-button {
   background-color: rgb(62, 59, 113);
   color: rgb(243, 241, 241);
   font-weight: bold;
@@ -263,4 +266,52 @@ button:hover {
   height: 20rem;
   overflow-y: scroll;
   padding: 1% 2%;
+}
+
+/* ============================== */
+/* Navbar.js */
+/* ============================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(46, 45, 45);
+  padding: 1%;
+  color: rgb(243, 241, 241);
+}
+#add-job-button {
+  background-color: rgb(62, 59, 113);
+  color: rgb(243, 241, 241);
+  font-size: 1.8rem;
+  width: 15rem;
+}
+
+/* ============================== */
+/* AddJob.js */
+/* ============================== */
+.add-job-container {
+  width: 45%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(46, 45, 45);
+  color: rgb(243, 241, 241);
+  padding: 2% 2% 0% 2%;
+  border-radius: 10px;
+  height: 75%;
+  overflow-y: scroll;
+  box-shadow: 5px 10px 15px 5px rgb(30, 30, 30); 
+}
+.add-job-details {
+  padding: 1%;
+  width: 90%;
+  margin: auto;
+}
+.add-job-container h2 {
+  padding: 1%;
+  width: 90%;
+  margin: auto;
+}
+.required-asterisk {
+  color: red;
 }

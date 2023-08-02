@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
 import Card from "./Card";
-import { categoryNames, statusOptions } from "../../data/data";
+import { categoryNames, statusOptions } from "../data/data";
 
 const Category = ({ jobs, setJobs, categoryJobs, title, setJobDetails }) => {
   const allowDrop = (e) => {
     e.preventDefault();
   };
 
+  // used setData() with "jobId" in Card.js for drag
   const drop = (e) => {
     e.preventDefault();
     const id = e.dataTransfer.getData("jobId");
-    // change job status for job that was moved
+    // update details for job that was moved
     const updatedJobs = jobs.map((job) => {
       if (job.jobId == id) {
         job.status = e.currentTarget.id;
-        // update job.dateOfLastStatusUpdate
         const date = new Date();
         const localDateString = date.toLocaleDateString();
         job.dateOfLastStatusUpdate = localDateString;

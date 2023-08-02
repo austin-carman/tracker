@@ -4,6 +4,7 @@ const Card = ({ job, setJobDetails }) => {
     setJobDetails(job);
   };
 
+  // will use getData() with "jobId" in Category.js for drop
   const drag = (e) => {
     e.dataTransfer.setData("jobId", e.target.id);
   };
