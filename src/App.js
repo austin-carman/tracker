@@ -4,11 +4,13 @@ import { jobsData, categoryNames, statusOptions } from "./data/data";
 import Category from "./components/status/Category";
 import Details from "./components/details/Details";
 import Navbar from "./components/navbar/Navbar";
+import AddJob from "./components/AddJob";
 
 function App() {
   const [jobs, setJobs] = useState([]);
   const [jobDetails, setJobDetails] = useState(null);
   const [error, setError] = useState(null);
+  const [isAddJobOpen, setIsAddJobOpen] = useState(false);
   const errorMessage = "There was an error retrieving jobs";
 
   const categorizeJobs = (jobList) => {
@@ -86,7 +88,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar setIsAddJobOpen={setIsAddJobOpen} />
       <div className="container">
         <Category
           jobs={jobs}
@@ -139,6 +141,7 @@ function App() {
           setJobDetails={setJobDetails}
         />
       )}
+      {isAddJobOpen && <AddJob />}
       {error && <div>{error}</div>}
     </div>
   );
