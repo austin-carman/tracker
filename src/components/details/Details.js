@@ -13,7 +13,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
   });
   // const [html] = document.getElementsByTagName("html");
 
-  // html.style.backdropFilter = "blur(10px)";
+  // html.style.filter = "blur(5px)";
 
   const handleCloseDetails = () => {
     // html.style.filter = "blur(0px)";
@@ -52,6 +52,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
             <h6>Title:&nbsp;</h6>
             <input
               className="h2-input"
+              type="text"
               name="title"
               value={job.title}
               onChange={handleChange}
@@ -75,7 +76,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           <div>
             <h6>Company:&nbsp;</h6>
             <input
-              className="h2-input"
+              className="h3-input"
               name="company"
               value={job.company}
               onChange={handleChange}
@@ -99,7 +100,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           <div>
             <h6>Location:&nbsp;</h6>
             <input
-              className="h2-input"
+              className="h3-input"
               name="location"
               value={job.location}
               onChange={handleChange}
@@ -166,8 +167,8 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         {isEditing.description ? (
           <>
             <h4>Description</h4>
-            <input
-              className="h3-input"
+            <textarea
+              className="h4-input longer-text-input"
               name="description"
               value={job.description}
               onChange={handleChange}
@@ -193,8 +194,8 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         {isEditing.notes ? (
           <>
             <h4>Notes</h4>
-            <input
-              className="h3-input"
+            <textarea
+              className="h4-input longer-text-input"
               name="notes"
               value={job.notes}
               onChange={handleChange}
