@@ -141,7 +141,7 @@ function App() {
           setJobDetails={setJobDetails}
         />
       )}
-      {isAddJobOpen && <AddJob />}
+      {isAddJobOpen && <AddJob setIsAddJobOpen={setIsAddJobOpen} />}
       {error && <div>{error}</div>}
     </div>
   );
