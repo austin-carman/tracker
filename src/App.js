@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { jobsData, categoryNames, statusOptions } from "./data/data";
 import Category from "./components/status/Category";
 import Details from "./components/details/Details";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -85,6 +86,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <div className="container">
         <Category
           jobs={jobs}
