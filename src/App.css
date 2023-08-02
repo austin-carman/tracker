@@ -110,6 +110,10 @@ select {
   border: 2px solid rgb(62, 59, 113);
   color: rgb(243, 241, 241);
   border-radius: 5px;
+  font-size: 1.8rem;
+}
+select:focus {
+  outline: none;
 }
 select:hover {
   cursor: pointer;
