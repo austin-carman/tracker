@@ -1,5 +1,19 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
+
 const AddJob = ({ setIsAddJobOpen }) => {
+  const initialState = {
+    title: "",
+    company: "",
+    location: "",
+    postUrl: "",
+    status: "",
+    description: "",
+    notes: "",
+  };
+  // eslint-disable-next-line no-unused-vars
+  const [addForm, setAddForm] = useState(initialState);
+
   const handleClickCancel = () => {
     setIsAddJobOpen(false);
   };
@@ -13,6 +27,11 @@ const AddJob = ({ setIsAddJobOpen }) => {
   // userId
   // jobId
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAddForm({ ...addForm, [name]: value });
+  };
+
   return (
     <div className="add-job-container">
       <h2>Add Job</h2>
@@ -20,25 +39,29 @@ const AddJob = ({ setIsAddJobOpen }) => {
         <h6>
           Title<span className="required-asterisk">*</span>
         </h6>
-        <input />
+        <input name="title" value={addForm.title} onChange={handleChange} />
       </div>
       <div className="add-job-details">
         <h6>
           Company<span className="required-asterisk">*</span>
         </h6>
-        <input />
+        <input name="company" value={addForm.company} onChange={handleChange} />
       </div>
       <div className="add-job-details">
         <h6>
           Location<span className="required-asterisk">*</span>
         </h6>
-        <input />
+        <input
+          name="location"
+          value={addForm.location}
+          onChange={handleChange}
+        />
       </div>
       <div className="add-job-details">
         <h6>
           Post Url<span className="required-asterisk">*</span>
         </h6>
-        <input />
+        <input name="postUrl" value={addForm.postUrl} onChange={handleChange} />
       </div>
       <div className="add-job-details">
         <h6>Status</h6>
@@ -61,7 +84,6 @@ const AddJob = ({ setIsAddJobOpen }) => {
         <textarea />
       </div>
       <div className="button-group">
-        {/* <div className="add-job-button-group"> */}
         <button onClick={handleClickCancel}>Cancel</button>
         <button className="save-button" onClick={handleClickSave}>
           Save
