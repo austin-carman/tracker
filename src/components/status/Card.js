@@ -17,7 +17,7 @@ const Card = ({ job, setJobDetails }) => {
       draggable={true}
       onDragStart={drag}
     >
-      <h4>{job.title}</h4>
+      <h4 className="title">{job.title}</h4>
       <h5 className="company">{job.company}</h5>
       <h6 className="location">{job.location}</h6>
       <h6 className="date">{job.dateOfLastStatusUpdate}</h6>

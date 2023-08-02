@@ -93,13 +93,29 @@ input {
 .h3-input {
   font-size: 2.2rem;
 }
+select {
+  padding: 0.5rem;
+}
+a {
+  color: white;
+  font-style: italic;
+}
+button {
+  background-color: white;
+  width: 10rem;
+  border-radius: 10rem;
+  border: none;
+  margin: 0 1%;
+  padding: 1.5rem;
+}
 
 /* =========================== */
 /* App.js styles */
 /* =========================== */
 .container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  /* to make each column stay the same width -> minmax(0, 1fr) */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 /* =========================== */
@@ -128,6 +144,11 @@ input {
   box-shadow: 2px 5px 10px 1px rgb(20, 20, 20);
   cursor: move;
 }
+.job-card .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .job-card .date {
   display: block;
   font-size: smaller;
@@ -141,20 +162,36 @@ input {
 /* Details.js */
 /* =========================== */
 .details-container {
-  width: 50%;
+  width: 45%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 2%;
+  background-color: rgb(46, 45, 45);
+  color: rgb(243, 241, 241);
+  padding: 2% 2% 0% 2%;
   border-radius: 10px;
+  height: 75%;
+  overflow-y: scroll;
 }
 .editable-details-container {
   display: flex;
+  padding: 1% 2%;
+  width: 75%;
+  margin: auto;
+}
+.select-status {
+  padding: 1% 2%;
+  width: 75%;
+  margin: auto;
+}
+#details-title {
+  font-weight: bold;
 }
 .edit-button {
   display: none;
+  padding: 0%;
+  width: 5rem;
 }
 .edit-button:hover {
   cursor: pointer;
@@ -162,8 +199,16 @@ input {
 .editable-details-container:hover .edit-button {
   display: block;
 }
-#editable-container {
+.longer-text-container {
   display: block;
+}
+.description-text-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-top: 1px solid rgb(243, 241, 241);;
+  border-bottom: 1px solid rgb(243, 241, 241);;
 }
 #label-edit-container {
   display: flex;
@@ -171,7 +216,28 @@ input {
 .details-buttons-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 5%;
+  position: sticky;
+  bottom:-1px;
+  background-color: rgb(46, 45, 45);
+  padding: 3rem;
 }
 .date-added {
   font-style: italic;
+}
+#last-updated-date {
+  font-size: 1.6rem;
+  font-style: italic;
+}
+#save-button {
+  background-color: rgb(62, 59, 113);
+  color: rgb(243, 241, 241);
+  font-weight: bold;
+}
+.longer-text {
+  height: 20rem;
+  overflow-y: scroll;
+  border: 3px solid rgb(62, 59, 113);
+  padding: 1% 2%;
 }

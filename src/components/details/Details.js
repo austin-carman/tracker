@@ -11,12 +11,12 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
     description: false,
     notes: false,
   });
-  const [body] = document.getElementsByTagName("body");
+  // const [html] = document.getElementsByTagName("html");
 
-  body.style.backgroundColor = "grey";
+  // html.style.backdropFilter = "blur(10px)";
 
   const handleCloseDetails = () => {
-    body.style.backgroundColor = "white";
+    // html.style.filter = "blur(0px)";
     setJobDetails(null);
   };
 
@@ -59,7 +59,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </div>
         ) : (
           <>
-            <h2>{job.title}</h2>
+            <h2 id="details-title">{job.title}</h2>
             <button
               className="edit-button"
               onClick={() => handleStartEdit("title")}
@@ -83,7 +83,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </div>
         ) : (
           <>
-            <h2>{job.company}</h2>
+            <h3>{job.company}</h3>
             <button
               className="edit-button"
               onClick={() => handleStartEdit("company")}
@@ -107,7 +107,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </div>
         ) : (
           <>
-            <h2>{job.location}</h2>
+            <h3>{job.location}</h3>
             <button
               className="edit-button"
               onClick={() => handleStartEdit("location")}
@@ -131,7 +131,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
           </div>
         ) : (
           <>
-            <a href={job.postUrl}>
+            <a href={job.postUrl} target="_blank" rel="noreferrer">
               <h3>View job post</h3>
             </a>
             <button
@@ -145,21 +145,27 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
       </div>
       {/* Status/Category */}
       {/* need to add value from state = status */}
-      <h2>Status</h2>
-      <select name="status" value={job.status} onChange={handleChange}>
-        <option value={"interested"}>Interested</option>
-        <option value={"applied"}>Applied</option>
-        <option value={"reachedOut"}>Reached Out</option>
-        <option value={"interview"}>Interview</option>
-        <option value={"offer"}>Offer</option>
-        <option value={"notMovingForward"}>Not Moving Forward</option>
-      </select>
-      <span>Last updated:&nbsp;{job.dateOfLastStatusUpdate}</span>
+      <div className="select-status">
+        <h4>
+          Status:{" "}
+          <span id="last-updated-date">
+            Last updated {job.dateOfLastStatusUpdate}
+          </span>
+        </h4>
+        <select name="status" value={job.status} onChange={handleChange}>
+          <option value={"interested"}>Interested</option>
+          <option value={"applied"}>Applied</option>
+          <option value={"reachedOut"}>Reached Out</option>
+          <option value={"interview"}>Interview</option>
+          <option value={"offer"}>Offer</option>
+          <option value={"notMovingForward"}>Not Moving Forward</option>
+        </select>
+      </div>
       {/* Description */}
-      <div id="editable-container" className="editable-details-container">
+      <div className="editable-details-container longer-text-container description-text-container">
         {isEditing.description ? (
           <>
-            <h3>Description</h3>
+            <h4>Description</h4>
             <input
               className="h3-input"
               name="description"
@@ -170,7 +176,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         ) : (
           <>
             <div id="label-edit-container">
-              <h3>Description</h3>
+              <h4>Description</h4>
               <button
                 className="edit-button"
                 onClick={() => handleStartEdit("description")}
@@ -178,15 +184,15 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
                 Edit
               </button>
             </div>
-            <p>{job.description}</p>
+            <p className="longer-text">{job.description}</p>
           </>
         )}
       </div>
       {/* Notes */}
-      <div id="editable-container" className="editable-details-container">
+      <div className="editable-details-container longer-text-container">
         {isEditing.notes ? (
           <>
-            <h3>Notes</h3>
+            <h4>Notes</h4>
             <input
               className="h3-input"
               name="notes"
@@ -197,7 +203,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         ) : (
           <>
             <div id="label-edit-container">
-              <h3>Notes</h3>
+              <h4>Notes</h4>
               <button
                 className="edit-button"
                 onClick={() => handleStartEdit("notes")}
@@ -205,7 +211,7 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
                 Edit
               </button>
             </div>
-            <p>{job.notes}</p>
+            <p className="longer-text">{job.notes}</p>
           </>
         )}
       </div>
@@ -213,7 +219,9 @@ const Details = ({ jobs, setJobs, jobDetails, setJobDetails }) => {
         <button onClick={handleCloseDetails}>Cancel</button>
         {/* Date Added */}
         <span className="date-added">Date Added: {job.dateAdded}</span>
-        <button onClick={handleSaveDetails}>Save</button>
+        <button id="save-button" onClick={handleSaveDetails}>
+          Save
+        </button>
       </div>
     </div>
   );
