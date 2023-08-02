@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { statusOptions } from "../data/data";
 
 const AddJob = ({ setIsAddJobOpen }) => {
   const initialState = {
@@ -65,23 +66,26 @@ const AddJob = ({ setIsAddJobOpen }) => {
       </div>
       <div className="add-job-details">
         <h6>Status</h6>
-        {/* select attributes name, value, onchange */}
-        <select>
-          <option value={"interested"}>Interested</option>
-          <option value={"applied"}>Applied</option>
-          <option value={"reachedOut"}>Reached Out</option>
-          <option value={"interview"}>Interview</option>
-          <option value={"offer"}>Offer</option>
-          <option value={"notMovingForward"}>Not Moving Forward</option>
+        <select name="status" value={addForm.status} onChange={handleChange}>
+          <option value={statusOptions[0]}>Interested</option>
+          <option value={statusOptions[1]}>Applied</option>
+          <option value={statusOptions[2]}>Reached Out</option>
+          <option value={statusOptions[3]}>Interview</option>
+          <option value={statusOptions[4]}>Offer</option>
+          <option value={statusOptions[5]}>Not Moving Forward</option>
         </select>
       </div>
       <div className="add-job-details">
         <h6>Description</h6>
-        <textarea />
+        <textarea
+          name="description"
+          value={addForm.description}
+          onChange={handleChange}
+        />
       </div>
       <div className="add-job-details">
         <h6>Notes</h6>
-        <textarea />
+        <textarea name="notes" value={addForm.notes} onChange={handleChange} />
       </div>
       <div className="button-group">
         <button onClick={handleClickCancel}>Cancel</button>
